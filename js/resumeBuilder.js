@@ -74,13 +74,39 @@ var projects = {
   projects: [
     {
       title: "Build a Portfolio Site",
-      date: "2017",
+      dates: "2017",
       description: "HTML/CSS/Javascript project. Uses Grunt, GraphicsMagick (for art direction), ImageOptim.",
       images: [
       ]
     }
   ]
 };
+
+projects.display = function() {
+  for (var i = 0; i < projects.projects.length; i++) {
+    $("#projects").append(HTMLprojectStart);
+
+    var project = projects.projects[i];
+
+    var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
+    $(".project-entry:last").append(formattedTitle);
+
+    var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
+    $(".project-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+    $(".project-entry:last").append(formattedDescription);
+
+    if (project.images.length > 0) {
+      for (var j = 0; j < project.images.length; j++) {
+        var formattedImage = HTMLprojectImage.replace("%data%", project.images[j]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
+  }
+};
+
+projects.display();
 
 // The above is what I can see as far as lesson video "Javascript
 // Basics -> Data Types -> Quiz: All the Resume Sections -> Answer" shows.
