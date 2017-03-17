@@ -5,7 +5,7 @@ var bio = {
     mobile: '+65 96387450',
     email: 'jhannwong@gmail.com',
     github: 'hannwong',
-    location: 'Singapore'
+    location: '1.372958, 103.948736'
   },
 
   welcomeMessage: 'I am a reverse-engineer who can rapidly equip you with the latest emerging technologies. Of course, front-end web development work is a piece of cake to me. I took up the Udacity Front-End Nanodegree in an attempt to formalize my skills.<br><br>' +
@@ -53,7 +53,15 @@ var work = {
       employer: "Go-Ahead Singapore",
       title: "Bus Driver",
       dates: "2016 - 2017",
-      description: "Learned several bus routes so well that I helped fill gaps on launch date (Sep 04, 2016), during which many bus drivers were assigned routes they didn't know (planning and training issues). Worked with management on developing new training material, better driving techniques, as well as on managing severe and urgent mismatch issues between management and local cultures. (http://www.straitstimes.com/singapore/transport/go-ahead-up-to-speed-after-a-bumpy-start)"
+      description: "Learned several bus routes so well that I helped fill gaps on launch date (Sep 04, 2016), during which many bus drivers were assigned routes they didn't know (planning and training issues). Worked with management on developing new training material, better driving techniques, as well as on managing severe and urgent mismatch issues between management and local cultures. (http://www.straitstimes.com/singapore/transport/go-ahead-up-to-speed-after-a-bumpy-start)",
+      location: "Go-Ahead Singapore (Loyang Bus Depot)"
+    },
+    {
+      employer: "Singapore University of Technology and Design",
+      title: "Part-time teaching aid",
+      dates: "2017",
+      description: "Just some part-time work.",
+      location: "Singapore University of Technology and Design"
     },
     {
       employer: "Various software houses in Singapore",
@@ -169,3 +177,5 @@ function inName(name) {
 }
 
 $("#main").append(internationalizeButton);
+
+$("#mapDiv").append(googleMap);
