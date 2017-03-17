@@ -52,20 +52,20 @@ var work = {
     {
       employer: "Go-Ahead Singapore",
       title: "Bus Driver",
-      dates: "2016",
+      dates: "2016 - 2017",
       description: "Learned several bus routes so well that I helped fill gaps on launch date (Sep 04, 2016), during which many bus drivers were assigned routes they didn't know (planning and training issues). Worked with management on developing new training material, better driving techniques, as well as on managing severe and urgent mismatch issues between management and local cultures. (http://www.straitstimes.com/singapore/transport/go-ahead-up-to-speed-after-a-bumpy-start)"
+    },
+    {
+      employer: "Various software houses in Singapore",
+      title: "From technician to programmer",
+      dates: "Spanning last 10 years",
+      description: "Singapore has a culture: you publish facts that make you look more competent than your bosses, you WILL be fired. Unfortunately for me, I thrive on creating solutions. At every turn of my diligent and effective servitude, I had been threatened for 'rocking the boat', even when it almost always meant doubling or tripling profits and/or lowering costs drastically. One example: SingTel's CTO tells every SingTel customer not to set passwords to protect their (officially SingTel-supplied) home routers, just so that SingTel's technical support can enter those routers to troubleshoot at any time. Unbeknownst to the entire country, a persistent and unusually reliable botnet was thus made possible by SingTel's CTO. Shortly afterward, a cyber attack turned off all SingTel broadband for one day. The attack was performed by 'infiltrators', not mere hackers, which led to the Singapore government announcing that 'there was no reason to believe it was an attack'. In addition, Singapore routinely 'attacks herself' by misconfiguring her own servers and services, which could academically be argued as constituting 'another attack vector' altogether. In short, Singapore's culture has created in Singapore a uniquely 'juicy target': high-value assets guarded by uncommonly low technical capabilities. From my previous work with incidental contact with various foreign state actors, it is clear that Singapore will be held hostage within the next few decades, possibly even to the point of voluntary annexation (citizens here love to hate the government). So yeah, the only way I can survive in a career in Singapore is to be less competent than my bosses. The country's civil sector alone runs on ego and power trips."
     },
     {
       employer: "Unknown",
       title: "Hacker",
       dates: "Not convenient to reveal",
       description: "Reverse-engineered malware to document new and/or emerging techniques in cyber weapons. Reverse-engineered numerous commercial products to compile comprehensive catalogue of attack vectors. Trained agents in targeted phonology and cultural mimicry to effect their insertion in timeframes of 'a few months'. And some other work I would rather forget I ever did."
-    },
-    {
-      employer: "Various software houses in Singapore",
-      title: "From technician to programmer",
-      dates: "Spanning last 10 years",
-      description: "Singapore has a culture: you publish facts that make you look more competent than your bosses, you WILL be fired. Unfortunately for me, I thrive on creating solutions. At every turn of my diligent and effective servitude, I had been threatened for 'rocking the boat', even when it almost always meant doubling or tripling profits and/or lowering costs drastically. One example: SingTel's CTO tells every SingTel customer not to set passwords to protect their (officially SingTel-supplied) home routers, just so that SingTel's technical support can enter those routers to troubleshoot at any time. Unbeknownst to the entire country, a persistent and unusually reliable botnet was thus made possible by SingTel's CTO. Shortly afterward, a cyber attack turned off all SingTel broadband for one day. The attack was performed by 'infiltrators', not mere hackers, which led to the Singapore government announcing that 'there was no reason to believe it was an attack'. In addition, Singapore routinely 'attacks herself' by misconfiguring her own servers and services, which could academically be argued as 'another attack vector' altogether. In short, Singapore's culture has created in Singapore a uniquely 'juicy target': high-value assets guarded by uncommonly low technical capabilities. From my previous work with incidental contact with various foreign state actors, it is clear that Singapore will be held hostage within the next few decades, possibly even to the point of voluntary annexation (citizens here love to hate the government)."
     }
   ]
 };
@@ -104,14 +104,30 @@ if (bio.skills.length > 0) {
   });
 }
 
-if (work.jobs.length > 0) {
-  for (job in work.jobs) {
+function displayWork() {
+  for (var i = 0; i < work.jobs.length; i++) {
     $("#workExperience").append(HTMLworkStart);
 
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    var job = work.jobs[i];
 
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
     $(".work-entry:last").append(formattedEmployerTitle);
+
+    var formattedDates = HTMLworkDates.replace("%data%", job.dates);
+    $(".work-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
+    $(".work-entry:last").append(formattedDescription);
   }
 }
+
+displayWork();
+
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x, y);
+});
