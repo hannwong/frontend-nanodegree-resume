@@ -16,35 +16,36 @@ var bio = {
   skills: [
     'reverse-engineering', 'languages', 'HTML/CSS/JS', 'computer abilities spanning almost the entire history of computing on Earth'],
 
-  bioPic: 'images/fry.jpg'
-};
+  bioPic: 'images/fixed/fry.jpg',
 
-var education = {
-  schools: [
-    {
-      name: 'National University of Singapore',
-      city: 'Singapore',
-      degree: 'Computer Science',
-      major: ['Not completed due to financial difficulty'],
-      dates: 2005,
-    },
-    {
-      name: 'Nanyang Technological University',
-      city: 'Singapore',
-      degree: 'Communication Studies',
-      major: ['Not completed due to financial difficulty'],
-      dates: 2008
-    }
-  ],
+  display: function() {
+    var formattedName = HTMLheaderName.replace('%data%', bio.name);
+    var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+    var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+    var formattedgithub = HTMLgithub.replace('%data%', bio.contacts.github);
+    var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
+    var formattedWelcome = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
 
-  onlineCourses: [
-    {
-      title: 'Udacity Front-End Nanodegree',
-      school: 'Udacity',
-      dates: 2016-2017,
-      url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
+    $('#header').prepend(formattedRole);
+    $('#header').prepend(formattedName);
+
+    $('#topContacts').append(formattedMobile);
+    $('#topContacts').append(formattedEmail);
+    $('#topContacts').append(formattedgithub);
+
+    $('#header').append(formattedBioPic);
+    $('#header').append(formattedWelcome);
+
+    if (bio.skills.length > 0) {
+      $("#header").append(HTMLskillsStart);
+
+      bio.skills.forEach(function(skill) {
+        var formattedSkill = HTMLskills.replace("%data%", skill);
+        $("#skills").append(formattedSkill);
+      });
     }
-  ]
+  }
 };
 
 var work = {
@@ -75,7 +76,26 @@ var work = {
       dates: "Not convenient to reveal",
       description: "Reverse-engineered malware to document new and/or emerging techniques in cyber weapons. Reverse-engineered numerous commercial products to compile comprehensive catalogue of attack vectors. Trained agents in targeted phonology and cultural mimicry to effect their insertion in timeframes of 'a few months'. And some other work I would rather forget I ever did."
     }
-  ]
+  ],
+
+  display: function() {
+    for (var i = 0; i < work.jobs.length; i++) {
+      $("#workExperience").append(HTMLworkStart);
+
+      var job = work.jobs[i];
+
+      var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+      var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+      var formattedEmployerTitle = formattedEmployer + formattedTitle;
+      $(".work-entry:last").append(formattedEmployerTitle);
+
+      var formattedDates = HTMLworkDates.replace("%data%", job.dates);
+      $(".work-entry:last").append(formattedDates);
+
+      var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
+      $(".work-entry:last").append(formattedDescription);
+    }
+  }
 };
 
 var projects = {
@@ -84,80 +104,68 @@ var projects = {
       title: "Build a Portfolio Site",
       dates: "2017",
       description: "HTML/CSS/Javascript project. Uses Grunt, GraphicsMagick (for art direction), ImageOptim.",
-      images: [
-      ]
+      images: ["images/still_life.jpg", "images/volt.jpg"]
     }
-  ]
-};
+  ],
 
-projects.display = function() {
-  for (var i = 0; i < projects.projects.length; i++) {
-    $("#projects").append(HTMLprojectStart);
+  display: function() {
+    for (var i = 0; i < projects.projects.length; i++) {
+      $("#projects").append(HTMLprojectStart);
 
-    var project = projects.projects[i];
+      var project = projects.projects[i];
 
-    var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
-    $(".project-entry:last").append(formattedTitle);
+      var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
+      $(".project-entry:last").append(formattedTitle);
 
-    var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
-    $(".project-entry:last").append(formattedDates);
+      var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
+      $(".project-entry:last").append(formattedDates);
 
-    var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
-    $(".project-entry:last").append(formattedDescription);
+      var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+      $(".project-entry:last").append(formattedDescription);
 
-    if (project.images.length > 0) {
-      for (var j = 0; j < project.images.length; j++) {
-        var formattedImage = HTMLprojectImage.replace("%data%", project.images[j]);
-        $(".project-entry:last").append(formattedImage);
+      if (project.images.length > 0) {
+        for (var j = 0; j < project.images.length; j++) {
+          var formattedImage = HTMLprojectImage.replace("%data%", project.images[j]);
+          $(".project-entry:last").append(formattedImage);
+        }
       }
     }
   }
 };
 
+var education = {
+  schools: [
+    {
+      name: 'National University of Singapore',
+      city: 'Singapore',
+      degree: 'Computer Science',
+      major: ['Not completed due to financial difficulty'],
+      dates: 2005,
+    },
+    {
+      name: 'Nanyang Technological University',
+      city: 'Singapore',
+      degree: 'Communication Studies',
+      major: ['Not completed due to financial difficulty'],
+      dates: 2008
+    }
+  ],
+
+  onlineCourses: [
+    {
+      title: 'Udacity Front-End Nanodegree',
+      school: 'Udacity',
+      dates: 2016-2017,
+      url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
+    }
+  ]
+};
+
 projects.display();
 
-// The above is what I can see as far as lesson video "Javascript
-// Basics -> Data Types -> Quiz: All the Resume Sections -> Answer" shows.
+bio.display();
 
-var formattedName = HTMLheaderName.replace('%data%', bio.name);
-var formattedRole = HTMLheaderName.replace('%data%', bio.role);
-
-var formattedWelcome = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
-
-$('#header').prepend(formattedWelcome);
-$('#header').prepend(formattedRole + "<br>");
-$('#header').prepend(formattedName);
-
-
-if (bio.skills.length > 0) {
-  $("#header").append(HTMLskillsStart);
-
-  bio.skills.forEach(function(skill) {
-    var formattedSkill = HTMLskills.replace("%data%", skill);
-    $("#skills").append(formattedSkill);
-  });
-}
-
-function displayWork() {
-  for (var i = 0; i < work.jobs.length; i++) {
-    $("#workExperience").append(HTMLworkStart);
-
-    var job = work.jobs[i];
-
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerTitle);
-
-    var formattedDates = HTMLworkDates.replace("%data%", job.dates);
-    $(".work-entry:last").append(formattedDates);
-
-    var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
-    $(".work-entry:last").append(formattedDescription);
-  }
-}
-
-displayWork();
+work.display();
 
 $(document).click(function(loc) {
   var x = loc.pageX;
