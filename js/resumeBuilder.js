@@ -1,5 +1,5 @@
 var bio = {
-  name: 'Jon Wong',
+  name: 'John McFry',
   role: 'Web Developer',
   contacts: {
     mobile: '+65 96387450',
