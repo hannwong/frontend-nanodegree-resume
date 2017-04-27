@@ -31,6 +31,10 @@ h1 {
   display: inline;
 }
 
+#header > :nth-child(2) {
+  color: red;
+}
+
 h2 {
   font-weight: bold;
   font-size: 24px;

@@ -5,7 +5,7 @@ var bio = {
     mobile: '+65 96387450',
     email: 'jhannwong@gmail.com',
     github: 'hannwong',
-    location: '1.372958, 103.948736'
+    location: 'River Api Api'
   },
 
   welcomeMessage: 'I am a reverse-engineer who can rapidly equip you with the latest emerging technologies. Of course, front-end web development work is a piece of cake to me. I took up the Udacity Front-End Nanodegree in an attempt to formalize my skills.<br><br>' +
@@ -16,26 +16,25 @@ var bio = {
   skills: [
     'reverse-engineering', 'languages', 'HTML/CSS/JS', 'computer abilities spanning almost the entire history of computing on Earth'],
 
-  bioPic: 'images/fixed/fry.jpg',
+  biopic: 'images/fixed/fry.jpg',
 
   display: function() {
     var formattedName = HTMLheaderName.replace('%data%', bio.name);
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
     var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-    var formattedgithub = HTMLgithub.replace('%data%', bio.contacts.github);
-    var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
+    var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+    var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+    var formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
     var formattedWelcome = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
 
     $('#header').prepend(formattedRole);
     $('#header').prepend(formattedName);
 
-    $('#topContacts').append(formattedMobile);
-    $('#topContacts').append(formattedEmail);
-    $('#topContacts').append(formattedgithub);
+    $('#topContacts, #footerContacts').
+      append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 
-    $('#header').append(formattedBioPic);
-    $('#header').append(formattedWelcome);
+    $('#header').append(formattedBioPic, formattedWelcome);
 
     if (bio.skills.length > 0) {
       $("#header").append(HTMLskillsStart);
@@ -87,13 +86,10 @@ var work = {
       var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
       var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
       var formattedEmployerTitle = formattedEmployer + formattedTitle;
-      $(".work-entry:last").append(formattedEmployerTitle);
-
       var formattedDates = HTMLworkDates.replace("%data%", job.dates);
-      $(".work-entry:last").append(formattedDates);
-
       var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
-      $(".work-entry:last").append(formattedDescription);
+
+      $(".work-entry:last").append(formattedEmployerTitle, formattedDates, formattedDescription);
     }
   }
 };
@@ -115,13 +111,10 @@ var projects = {
       var project = projects.projects[i];
 
       var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
-      $(".project-entry:last").append(formattedTitle);
-
       var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
-      $(".project-entry:last").append(formattedDates);
-
       var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
-      $(".project-entry:last").append(formattedDescription);
+
+      $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
 
       if (project.images.length > 0) {
         for (var j = 0; j < project.images.length; j++) {
@@ -138,16 +131,16 @@ var education = {
     {
       name: 'National University of Singapore',
       degree: 'Computer Science',
-      dates: 2005,
+      dates: '2005',
       location: 'National University of Singapore',
-      major: ['Not completed due to financial difficulty'],
+      majors: ['Not completed due to financial difficulty'],
     },
     {
       name: 'Nanyang Technological University',
       degree: 'Communication Studies',
-      dates: 2008,
+      dates: '2008',
       location: 'Nanyang Technological University',
-      major: ['Not completed due to financial difficulty'],
+      majors: ['Not completed due to financial difficulty'],
     }
   ],
 
@@ -169,16 +162,12 @@ var education = {
       var formattedName = HTMLschoolName.replace("%data%", school.name);
       var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
       var formattedNameDegree = formattedName + formattedDegree;
-      $(".education-entry:last").append(formattedNameDegree);
-
       var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
-      $(".education-entry:last").append(formattedDates);
-
       var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
-      $(".education-entry:last").append(formattedLocation);
+      var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
 
-      var formattedMajor = HTMLschoolMajor.replace("%data%", school.major);
-      $(".education-entry:last").append(formattedMajor);
+      $(".education-entry:last").
+        append(formattedNameDegree, formattedDates, formattedLocation, formattedMajor);
     }
 
     if (education.onlineCourses.length > 0) {
@@ -193,13 +182,10 @@ var education = {
       var formattedTitle = HTMLonlineTitle.replace("%data%", course.title);
       var formattedSchool = HTMLonlineSchool.replace("%data%", course.school);
       var formattedTitleSchool = formattedTitle + formattedSchool;
-      $(".education-entry:last").append(formattedTitleSchool);
-
       var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
-      $(".education-entry:last").append(formattedDates);
-
       var formattedURL = HTMLonlineURL.replace("%data%", course.url);
-      $(".education-entry:last").append(formattedURL);
+
+      $(".education-entry:last").append(formattedTitleSchool, formattedDates, formattedURL);
     }
   }
 };
