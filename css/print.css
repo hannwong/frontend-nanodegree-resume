@@ -15,7 +15,8 @@
 
 #header > .name,
 #header > #personal-contact,
-#header > #professional-contact {
+#header > #professional-contact,
+#print-skills {
   display: block;
 }
 
@@ -36,10 +37,30 @@
   margin: 0;
 }
 
+#header {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border-bottom: 1px solid;
+}
+
 .flex-box {
   justify-content: flex-start;
 }
 
 .flex-item .orange-text {
   display: none;
+}
+
+.white-text {
+  color: black;
+  font-weight: normal;
+}
+
+.flex-column {
+  margin-left: 2em;
+}
+
+h2 {
+  padding: 0;
 }

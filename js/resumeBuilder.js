@@ -16,7 +16,9 @@ var bio = {
     'Please give me a chance to come back to normal life.',
 
   skills: [
-    'reverse-engineering', 'languages', 'HTML/CSS/JS', 'computer abilities spanning almost the entire history of computing on Earth'],
+    ['Languages', ['HTML/CSS/JS', 'Python', 'C/C++', 'PHP', 'Less/Sass']],
+    ['Frameworks/Libraries', ['jQuery', 'AngularJS', 'Knockout.js', 'Bootstrap/Foundation', 'Grunt/Gulp', 'Jasmine']],
+    ['Other', ['Git/GitHub', 'GIMP', 'Jekyll', 'Assembly', 'Hacking', 'Phonology', 'Cultural mimicry']]],
 
   biopic: 'images/fixed/fry.jpg',
 
@@ -42,7 +44,9 @@ var bio = {
       $("#header").append(HTMLskillsStart);
 
       bio.skills.forEach(function(skill) {
-        var formattedSkill = HTMLskills.replace("%data%", skill);
+        var skillToStr = HTMLskillsTemplate.replace('%category%', skill[0]);
+        skillToStr = skillToStr.replace('%skills%', skill[1].join(', '));
+        var formattedSkill = HTMLskills.replace('%data%', skillToStr);
         $("#skills").append(formattedSkill);
       });
     }
@@ -56,6 +60,15 @@ var bio = {
     formattedGithub = HTMLPrint_github.replace(/%data%/g, bio.contacts.github);
     var formattedLinkedin = HTMLPrint_linkedin.replace(/%data%/g, bio.contacts.linkedin);
     $('#professional-contact > ul').append(formattedMysite, formattedGithub, formattedLinkedin);
+
+    if (bio.skills.length > 0) {
+      bio.skills.forEach(function(skill) {
+        var skillToStr = HTMLskillsTemplate.replace('%category%', skill[0]);
+        skillToStr = skillToStr.replace('%skills%', skill[1].join(', '));
+        var formattedSkill = HTMLskills.replace('%data%', skillToStr);
+        $("#print-skills ul").append(formattedSkill);
+      });
+    }
   }
 };
 
