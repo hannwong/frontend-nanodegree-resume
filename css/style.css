@@ -31,8 +31,22 @@ h1 {
   display: inline;
 }
 
-#header > :nth-child(2) {
+#header > #personal-contact,
+#header > #professional-contact
+{
+  display: none;
+}
+
+#header .name {
+  display: inline;
+}
+
+#header > .role {
   color: red;
+}
+
+#print-skills {
+  display: none;
 }
 
 h2 {

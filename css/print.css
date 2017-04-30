@@ -1,0 +1,45 @@
+.welcome-message,
+#header > .role,
+.biopic,
+#topContacts,
+#skills-h3,
+#skills,
+#header hr {
+  display: none;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+}
+
+#header > .name,
+#header > #personal-contact,
+#header > #professional-contact {
+  display: block;
+}
+
+#header > #personal-contact {
+  width: 25%;
+}
+
+#header > .name {
+  width: 50%;
+  text-align: center;
+}
+
+#header > #professional-contact {
+  width: 25%;
+}
+
+#header > #professional-contact a {
+  margin: 0;
+}
+
+.flex-box {
+  justify-content: flex-start;
+}
+
+.flex-item .orange-text {
+  display: none;
+}

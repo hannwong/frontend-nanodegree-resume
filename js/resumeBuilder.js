@@ -5,7 +5,9 @@ var bio = {
     mobile: '+65 96387450',
     email: 'jhannwong@gmail.com',
     github: 'hannwong',
-    location: 'River Api Api'
+    linkedin: 'jon-wong-29347b54',
+    mysite: 'udacity-FEND-online-resume',
+    location: 'River Api Api, Singapore'
   },
 
   welcomeMessage: 'I am a reverse-engineer who can rapidly equip you with the latest emerging technologies. Of course, front-end web development work is a piece of cake to me. I took up the Udacity Front-End Nanodegree in an attempt to formalize my skills.<br><br>' +
@@ -44,6 +46,16 @@ var bio = {
         $("#skills").append(formattedSkill);
       });
     }
+
+    // For print
+    $('#header').prepend(HTMLPrint_PersonalContact);
+    $('#header').append(HTMLPrint_ProfessionalContact);
+    $('#personal-contact > ul').append(formattedLocation, formattedMobile, formattedEmail);
+
+    var formattedMysite = HTMLPrint_mysite.replace(/%data%/g, bio.contacts.mysite);
+    formattedGithub = HTMLPrint_github.replace(/%data%/g, bio.contacts.github);
+    var formattedLinkedin = HTMLPrint_linkedin.replace(/%data%/g, bio.contacts.linkedin);
+    $('#professional-contact > ul').append(formattedMysite, formattedGithub, formattedLinkedin);
   }
 };
 
