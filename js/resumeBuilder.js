@@ -59,6 +59,7 @@ var bio = {
     var formattedMysite = HTMLPrint_mysite.replace(/%data%/g, bio.contacts.mysite);
     formattedGithub = HTMLPrint_github.replace(/%data%/g, bio.contacts.github);
     var formattedLinkedin = HTMLPrint_linkedin.replace(/%data%/g, bio.contacts.linkedin);
+    formattedLinkedin = formattedLinkedin.replace(/%account%/g, bio.contacts.linkedin.substr(0, 8));
     $('#professional-contact > ul').append(formattedMysite, formattedGithub, formattedLinkedin);
 
     if (bio.skills.length > 0) {
@@ -122,10 +123,23 @@ var work = {
 var projects = {
   projects: [
     {
-      title: "Build a Portfolio Site",
+      title: "Online Resume",
       dates: "2017",
-      description: "HTML/CSS/Javascript project. Uses Grunt, GraphicsMagick (for art direction), ImageOptim.",
-      images: ["images/still_life.jpg", "images/volt.jpg"]
+      description: [
+        "Online resume. Print styles allows 1-page print version. HTML/CSS/Javascript.",
+        "Git repo has 1 branch for each job application. Temp repo forks host corresponding online resumes.",
+        "Above and beyond Udacity project requirements. Used for actual job applications."],
+      images: ["images/fixed/fry.jpg"],
+      url: 'github.com/hannwong/udacity-FEND-online-resume'
+    },
+    {
+      title: "Portfolio Site",
+      dates: "2017",
+      description: [
+        "HTML/CSS/Javascript project. Uses Grunt, GraphicsMagick (for art direction), ImageOptim.",
+        "Responsive design. Correct sizes of images downloaded, some web optimization employed."],
+      images: ["images/still_life.jpg", "images/volt.jpg"],
+      url: 'github.com/hannwong/udacity-FEND-portfolio-site'
     }
   ],
 
@@ -136,16 +150,41 @@ var projects = {
       var project = projects.projects[i];
 
       var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
+      formattedTitle = formattedTitle.replace('%url%', project.url);
       var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
-      var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+      // var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
 
-      $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
+      $(".project-entry:last").append(formattedTitle, formattedDates, HTMLprojectDescriptionStart);
+
+      for (var j = 0; j < project.description.length; j++) {
+        var description = project.description[j];
+        $(".project-entry:last ul").
+          append(HTMLprojectDescription.replace('%data%', description));
+      }
 
       if (project.images.length > 0) {
         for (var j = 0; j < project.images.length; j++) {
           var formattedImage = HTMLprojectImage.replace("%data%", project.images[j]);
           $(".project-entry:last").append(formattedImage);
         }
+      }
+
+      // For print
+      $("#projects").append(HTMLPrint_projectStart);
+
+      formattedTitle = HTMLPrint_Title.replace("%data%", project.title);
+      var formattedUrl = HTMLPrint_Url.replace(/%data%/g, project.url);
+      formattedDates = HTMLPrint_Dates.replace('%data%', project.dates);
+      // var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+
+      $(".print-project-entry:last").append(HTMLPrint_TitleStart, HTMLPrint_projectDescriptionStart);
+
+      $(".print-project-entry:last .title").append(formattedTitle, formattedUrl, formattedDates);
+
+      for (var j = 0; j < project.description.length; j++) {
+        var description = project.description[j];
+        $(".print-project-entry:last ul").
+          append(HTMLprojectDescription.replace('%data%', description));
       }
     }
   }

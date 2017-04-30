@@ -24,6 +24,10 @@ h6 {
   padding: 0 5%;
 }
 
+.print-project-entry {
+  display: none;
+}
+
 h1 {
   font-size: 40px;
   color: #f5a623;
@@ -172,6 +176,11 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.project-entry ul {
+  margin-left: 2em;
+  list-style-type: disc;
 }
 
 .biopic {

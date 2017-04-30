@@ -12,11 +12,11 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLPrint_PersonalContact = '<div id="personal-contact"><ul class="flex-box"></ul></div>';
-var HTMLPrint_ProfessionalContact = '<div id="professional-contact"><ul class="flex-box"></ul></div>';
+var HTMLPrint_PersonalContact = '<div id="personal-contact"><ul></ul></div>';
+var HTMLPrint_ProfessionalContact = '<div id="professional-contact"><ul></ul></div>';
 var HTMLPrint_mysite = '<li class="flex-item"><a target="_blank" href="hannwong.github.io/%data%">hannwong.github.io</a></li>';
 var HTMLPrint_github = '<li class="flex-item"><a target="_blank" href="github.com/%data%">github.com/%data%</a></li>';
-var HTMLPrint_linkedin = '<li class="flex-item"><a target="_blank" href="linkedin.com/in/%data%">linkedin.com/in/%data%</a></li>';
+var HTMLPrint_linkedin = '<li class="flex-item"><a target="_blank" href="linkedin.com/in/%data%">linkedin.com/in/%account%</a></li>';
 
 var HTMLheaderName = '<div class="name"><h1 id="name">%data%</h1></div>';
 var HTMLheaderRole = '<span class="role">%data%</span><hr>';
@@ -46,10 +46,18 @@ var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a target="_blank" href="%url%">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescriptionStart = '<p><br><ul></ul></p>';
+var HTMLprojectDescription = '<li>%data%</li>';
 var HTMLprojectImage = '<img src="%data%">';
+
+var HTMLPrint_projectStart = '<div class="print-project-entry"></div>';
+var HTMLPrint_TitleStart = '<div class="title"></div>';
+var HTMLPrint_Title = '<div><b>%data%</b> -&nbsp;</div>';
+var HTMLPrint_Url = '<div><a href="%data%">%data%</a></div>';
+var HTMLPrint_Dates = '<div>%data%</div>';
+var HTMLPrint_projectDescriptionStart = '<div class="description"><ul></ul></div>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
