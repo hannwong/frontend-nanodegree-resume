@@ -12,8 +12,16 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLPrint_PersonalContact = '<div id="personal-contact"><ul></ul></div>';
+var HTMLPrint_ProfessionalContact = '<div id="professional-contact"><ul></ul></div>';
+var HTMLPrint_mysite = '<li class="flex-item"><a target="_blank" href="hannwong.github.io/%data%">hannwong.github.io</a></li>';
+var HTMLPrint_github = '<li class="flex-item"><a target="_blank" href="github.com/%data%">github.com/%data%</a></li>';
+var HTMLPrint_linkedin = '<li class="flex-item"><a target="_blank" href="linkedin.com/in/%data%">linkedin.com/in/%account%</a></li>';
+
+var HTMLheaderName = '<div class="name"><h1 id="name">%data%</h1></div>';
+var HTMLheaderRole = '<span class="role">%data%</span><hr>';
+
+var HTMLPrint_skills = '<li class="flex-item"><span>%data%</span></li>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -27,6 +35,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
+var HTMLskillsTemplate = '<i>%category%</i>: %skills%'
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -34,13 +43,29 @@ var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescriptionStart = '<p><br><ul></ul></p>';
+var HTMLworkDescription = '<li>%data%</li>';
+
+var HTMLPrint_workStart = '<div class="print-work-entry"></div>';
+var HTMLPrint_workTitleStart = '<div class="title"></div>';
+var HTMLPrint_workEmployer = '<div><b>%data%</b> -&nbsp;</div>';
+var HTMLPrint_workTitle = '<div>%data%</div>';
+var HTMLPrint_workDates = '<div>%data%</div>';
+var HTMLPrint_workDescriptionStart = '<div class="description"><ul></ul></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a target="_blank" href="%url%">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescriptionStart = '<p><br><ul></ul></p>';
+var HTMLprojectDescription = '<li>%data%</li>';
 var HTMLprojectImage = '<img src="%data%">';
+
+var HTMLPrint_projectStart = '<div class="print-project-entry"></div>';
+var HTMLPrint_projectTitleStart = '<div class="title"></div>';
+var HTMLPrint_projectTitle = '<div><b>%data%</b> -&nbsp;</div>';
+var HTMLPrint_projectUrl = '<div><a href="%data%">%data%</a></div>';
+var HTMLPrint_projectDates = '<div>%data%</div>';
+var HTMLPrint_projectDescriptionStart = '<div class="description"><ul></ul></div>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -54,6 +79,12 @@ var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
+
+var HTMLPrint_schoolStart = '<div class="print-education-entry"></div>';
+var HTMLPrint_schoolTitleStart = '<div class="title"></div>';
+var HTMLPrint_schoolName = '<div><b>%data%</b> -&nbsp;</div>';
+var HTMLPrint_schoolDegree = '<div>%data%</div>';
+var HTMLPrint_schoolDates = '<div>%data%</div>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';

@@ -24,6 +24,12 @@ h6 {
   padding: 0 5%;
 }
 
+.print-project-entry,
+.print-work-entry,
+.print-education-entry {
+  display: none;
+}
+
 h1 {
   font-size: 40px;
   color: #f5a623;
@@ -31,8 +37,22 @@ h1 {
   display: inline;
 }
 
-#header > :nth-child(2) {
+#header > #personal-contact,
+#header > #professional-contact
+{
+  display: none;
+}
+
+#header .name {
+  display: inline;
+}
+
+#header > .role {
   color: red;
+}
+
+#print-skills {
+  display: none;
 }
 
 h2 {
@@ -158,6 +178,12 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.project-entry ul,
+.work-entry ul {
+  margin-left: 2em;
+  list-style-type: disc;
 }
 
 .biopic {
