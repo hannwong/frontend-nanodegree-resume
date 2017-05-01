@@ -84,31 +84,38 @@ h2 {
   margin-bottom: 0;
 }
 
-.project-entry {
+.project-entry,
+.work-entry {
   display: none;
 }
 
-.print-project-entry {
+.print-project-entry,
+.print-work-entry {
   font-size: 0.75em;
   margin-left: 2em;
   display: block;
 }
 
-.print-project-entry .title {
+.print-project-entry .title,
+.print-work-entry .title {
   display: flex;
   justify-content: space-between;
 }
 
 .print-project-entry .title :nth-child(1),
-.print-project-entry .title :nth-child(3) {
+.print-project-entry .title :nth-child(3),
+.print-work-entry .title :nth-child(1),
+.print-work-entry .title :nth-child(3) {
   flex-grow: 0;
 }
 
-.print-project-entry .title :nth-child(2) {
+.print-project-entry .title :nth-child(2),
+.print-work-entry .title :nth-child(2) {
   flex-grow: 1;
 }
 
-.print-project-entry ul {
+.print-project-entry ul,
+.print-work-entry ul {
   margin: 0.5em 0;
   margin-left: 2em;
   list-style-type: disc;

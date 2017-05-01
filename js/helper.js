@@ -43,7 +43,15 @@ var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescriptionStart = '<p><br><ul></ul></p>';
+var HTMLworkDescription = '<li>%data%</li>';
+
+var HTMLPrint_workStart = '<div class="print-work-entry"></div>';
+var HTMLPrint_workTitleStart = '<div class="title"></div>';
+var HTMLPrint_workEmployer = '<div><b>%data%</b> -&nbsp;</div>';
+var HTMLPrint_workTitle = '<div>%data%</div>';
+var HTMLPrint_workDates = '<div>%data%</div>';
+var HTMLPrint_workDescriptionStart = '<div class="description"><ul></ul></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a target="_blank" href="%url%">%data%</a>';
@@ -53,10 +61,10 @@ var HTMLprojectDescription = '<li>%data%</li>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLPrint_projectStart = '<div class="print-project-entry"></div>';
-var HTMLPrint_TitleStart = '<div class="title"></div>';
-var HTMLPrint_Title = '<div><b>%data%</b> -&nbsp;</div>';
-var HTMLPrint_Url = '<div><a href="%data%">%data%</a></div>';
-var HTMLPrint_Dates = '<div>%data%</div>';
+var HTMLPrint_projectTitleStart = '<div class="title"></div>';
+var HTMLPrint_projectTitle = '<div><b>%data%</b> -&nbsp;</div>';
+var HTMLPrint_projectUrl = '<div><a href="%data%">%data%</a></div>';
+var HTMLPrint_projectDates = '<div>%data%</div>';
 var HTMLPrint_projectDescriptionStart = '<div class="description"><ul></ul></div>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';

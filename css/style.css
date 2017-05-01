@@ -24,7 +24,8 @@ h6 {
   padding: 0 5%;
 }
 
-.print-project-entry {
+.print-project-entry,
+.print-work-entry {
   display: none;
 }
 
@@ -178,7 +179,8 @@ ul {
   list-style-type: none;
 }
 
-.project-entry ul {
+.project-entry ul,
+.work-entry ul {
   margin-left: 2em;
   list-style-type: disc;
 }

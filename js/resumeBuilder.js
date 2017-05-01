@@ -79,27 +79,39 @@ var work = {
       employer: "Go-Ahead Singapore",
       title: "Bus Driver",
       dates: "2016 - 2017",
-      description: "Learned several bus routes so well that I helped fill gaps on launch date (Sep 04, 2016), during which many bus drivers were assigned routes they didn't know (planning and training issues). Worked with management on developing new training material, better driving techniques, as well as on managing severe and urgent mismatch issues between management and local cultures. (http://www.straitstimes.com/singapore/transport/go-ahead-up-to-speed-after-a-bumpy-start)",
+      description: [
+        "Learned several bus routes well, helped fill gaps on launch date (Sep 04, 2016) when many bus drivers were assigned routes they didn't know.",
+        "Worked with management on developing new training material, better driving techniques."],
       location: "Go-Ahead Singapore (Loyang Bus Depot)"
     },
     {
       employer: "Singapore University of Technology and Design",
       title: "Part-time teaching aid",
       dates: "2017",
-      description: "Just some part-time work.",
+      description: [
+        "Developed programming exercises, programmatic teaching tools.",
+        "Teaching aid for Probability/Statistics, Algorithms, AI, Database.",
+        "Developed outreach workshops"],
       location: "Singapore University of Technology and Design"
     },
     {
       employer: "Various software houses in Singapore",
       title: "From technician to programmer",
       dates: "Spanning last 10 years",
-      description: "Singapore has a culture: you publish facts that make you look more competent than your bosses, you WILL be fired. Unfortunately for me, I thrive on creating solutions. At every turn of my diligent and effective servitude, I had been threatened for 'rocking the boat', even when it almost always meant doubling or tripling profits and/or lowering costs drastically. One example: SingTel's CTO tells every SingTel customer not to set passwords to protect their (officially SingTel-supplied) home routers, just so that SingTel's technical support can enter those routers to troubleshoot at any time. Unbeknownst to the entire country, a persistent and unusually reliable botnet was thus made possible by SingTel's CTO. Shortly afterward, a cyber attack turned off all SingTel broadband for one day. The attack was performed by 'infiltrators', not mere hackers, which led to the Singapore government announcing that 'there was no reason to believe it was an attack'. In addition, Singapore routinely 'attacks herself' by misconfiguring her own servers and services, which could academically be argued as constituting 'another attack vector' altogether. In short, Singapore's culture has created in Singapore a uniquely 'juicy target': high-value assets guarded by uncommonly low technical capabilities. From my previous work with incidental contact with various foreign state actors, it is clear that Singapore will be held hostage within the next few decades, possibly even to the point of voluntary annexation (citizens here love to hate the government). So yeah, the only way I can survive in a career in Singapore is to be less competent than my bosses. The country's civil sector alone runs on ego and power trips."
+      description: [
+        "Wrote first book on OFBiz, a Java-based ERP.",
+        "Reverse-engineered malware, legacy software. And some cybersecurity-related work.",
+        "Installed rapid collaborative workflows with git, involved pull requests (peer reviews), Agile, ITS (Redmine).",
+        "Migrated workflows away from SVN and CVS."]
     },
     {
       employer: "Unknown",
       title: "Hacker",
       dates: "Not convenient to reveal",
-      description: "Reverse-engineered malware to document new and/or emerging techniques in cyber weapons. Reverse-engineered numerous commercial products to compile comprehensive catalogue of attack vectors. Trained agents in targeted phonology and cultural mimicry to effect their insertion in timeframes of 'a few months'. And some other work I would rather forget I ever did."
+      description: [
+        "Reverse-engineered malware to document new and/or emerging techniques in cyber weapons.",
+        "Reverse-engineered numerous commercial products to compile comprehensive catalogue of attack vectors.",
+        "Trained agents in targeted phonology and cultural mimicry to effect their insertion in timeframes of 'a few months'."]
     }
   ],
 
@@ -115,7 +127,30 @@ var work = {
       var formattedDates = HTMLworkDates.replace("%data%", job.dates);
       var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
 
-      $(".work-entry:last").append(formattedEmployerTitle, formattedDates, formattedDescription);
+      $(".work-entry:last").append(formattedEmployerTitle, formattedDates, HTMLworkDescriptionStart);
+
+      for (var j = 0; j < job.description.length; j++) {
+        var description = job.description[j];
+        $(".work-entry:last ul").
+          append(HTMLworkDescription.replace('%data%', description));
+      }
+
+      // For print
+      $("#workExperience").append(HTMLPrint_workStart);
+
+      formattedEmployer = HTMLPrint_workEmployer.replace("%data%", job.employer);
+      formattedTitle = HTMLPrint_workTitle.replace("%data%", job.title);
+      formattedDates = HTMLPrint_workDates.replace('%data%', job.dates);
+
+      $(".print-work-entry:last").append(HTMLPrint_workTitleStart, HTMLPrint_workDescriptionStart);
+
+      $(".print-work-entry:last .title").append(formattedEmployer, formattedTitle, formattedDates);
+
+      for (var j = 0; j < job.description.length; j++) {
+        var description = job.description[j];
+        $(".print-work-entry:last ul").
+          append(HTMLworkDescription.replace('%data%', description));
+      }
     }
   }
 };
@@ -172,12 +207,11 @@ var projects = {
       // For print
       $("#projects").append(HTMLPrint_projectStart);
 
-      formattedTitle = HTMLPrint_Title.replace("%data%", project.title);
-      var formattedUrl = HTMLPrint_Url.replace(/%data%/g, project.url);
-      formattedDates = HTMLPrint_Dates.replace('%data%', project.dates);
-      // var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+      formattedTitle = HTMLPrint_projectTitle.replace("%data%", project.title);
+      var formattedUrl = HTMLPrint_projectUrl.replace(/%data%/g, project.url);
+      formattedDates = HTMLPrint_projectDates.replace('%data%', project.dates);
 
-      $(".print-project-entry:last").append(HTMLPrint_TitleStart, HTMLPrint_projectDescriptionStart);
+      $(".print-project-entry:last").append(HTMLPrint_projectTitleStart, HTMLPrint_projectDescriptionStart);
 
       $(".print-project-entry:last .title").append(formattedTitle, formattedUrl, formattedDates);
 
