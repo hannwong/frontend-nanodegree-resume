@@ -227,18 +227,18 @@ var projects = {
 var education = {
   schools: [
     {
-      name: 'National University of Singapore',
-      degree: 'Computer Science',
-      dates: '2005',
-      location: 'National University of Singapore',
-      majors: ['Not completed due to financial difficulty'],
-    },
-    {
       name: 'Nanyang Technological University',
       degree: 'Communication Studies',
       dates: '2008',
       location: 'Nanyang Technological University',
-      majors: ['Not completed due to financial difficulty'],
+      majors: ['Not completed due to financial difficulty']
+    },
+    {
+      name: 'National University of Singapore',
+      degree: 'Computer Science',
+      dates: '2005',
+      location: 'National University of Singapore',
+      majors: ['Not completed due to financial difficulty']
     }
   ],
 
@@ -266,6 +266,17 @@ var education = {
 
       $(".education-entry:last").
         append(formattedNameDegree, formattedDates, formattedLocation, formattedMajor);
+
+      // For print
+      $("#education").append(HTMLPrint_schoolStart);
+
+      formattedName = HTMLPrint_schoolName.replace("%data%", school.name);
+      formattedDegree = HTMLPrint_schoolDegree.replace("%data%", school.degree);
+      formattedDates = HTMLPrint_schoolDates.replace("%data%", school.dates);
+
+      $(".print-education-entry:last").append(HTMLPrint_schoolTitleStart);
+
+      $(".print-education-entry:last .title").append(formattedName, formattedDegree, formattedDates);
     }
 
     if (education.onlineCourses.length > 0) {
@@ -284,6 +295,17 @@ var education = {
       var formattedURL = HTMLonlineURL.replace("%data%", course.url);
 
       $(".education-entry:last").append(formattedTitleSchool, formattedDates, formattedURL);
+
+      // For print
+      $("#education").append(HTMLPrint_schoolStart);
+
+      formattedSchool = HTMLPrint_schoolName.replace("%data%", course.school);
+      formattedTitle = HTMLPrint_schoolDegree.replace("%data%", course.title);
+      formattedDates = HTMLPrint_schoolDates.replace("%data%", course.dates);
+
+      $(".print-education-entry:last").append(HTMLPrint_schoolTitleStart);
+
+      $(".print-education-entry:last .title").append(formattedSchool, formattedTitle, formattedDates);
     }
   }
 };

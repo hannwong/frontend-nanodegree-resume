@@ -25,7 +25,8 @@ h6 {
 }
 
 .print-project-entry,
-.print-work-entry {
+.print-work-entry,
+.print-education-entry {
   display: none;
 }
 

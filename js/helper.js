@@ -80,6 +80,12 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+var HTMLPrint_schoolStart = '<div class="print-education-entry"></div>';
+var HTMLPrint_schoolTitleStart = '<div class="title"></div>';
+var HTMLPrint_schoolName = '<div><b>%data%</b> -&nbsp;</div>';
+var HTMLPrint_schoolDegree = '<div>%data%</div>';
+var HTMLPrint_schoolDates = '<div>%data%</div>';
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 

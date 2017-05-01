@@ -85,19 +85,23 @@ h2 {
 }
 
 .project-entry,
-.work-entry {
+.work-entry,
+.education-entry, #education > h3,
+#mapDiv, #lets-connect, button {
   display: none;
 }
 
 .print-project-entry,
-.print-work-entry {
+.print-work-entry,
+.print-education-entry {
   font-size: 0.75em;
   margin-left: 2em;
   display: block;
 }
 
 .print-project-entry .title,
-.print-work-entry .title {
+.print-work-entry .title,
+.print-education-entry .title {
   display: flex;
   justify-content: space-between;
 }
@@ -105,12 +109,15 @@ h2 {
 .print-project-entry .title :nth-child(1),
 .print-project-entry .title :nth-child(3),
 .print-work-entry .title :nth-child(1),
-.print-work-entry .title :nth-child(3) {
+.print-work-entry .title :nth-child(3),
+.print-education-entry .title :nth-child(1),
+.print-education-entry .title :nth-child(3) {
   flex-grow: 0;
 }
 
 .print-project-entry .title :nth-child(2),
-.print-work-entry .title :nth-child(2) {
+.print-work-entry .title :nth-child(2),
+.print-education-entry .title :nth-child(2) {
   flex-grow: 1;
 }
 
