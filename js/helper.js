@@ -14,9 +14,9 @@ replace the %data% placeholder text you see in them.
 */
 var HTMLPrint_PersonalContact = '<div id="personal-contact"><ul></ul></div>';
 var HTMLPrint_ProfessionalContact = '<div id="professional-contact"><ul></ul></div>';
-var HTMLPrint_mysite = '<li class="flex-item"><a target="_blank" href="hannwong.github.io/%data%">hannwong.github.io</a></li>';
-var HTMLPrint_github = '<li class="flex-item"><a target="_blank" href="github.com/%data%">github.com/%data%</a></li>';
-var HTMLPrint_linkedin = '<li class="flex-item"><a target="_blank" href="linkedin.com/in/%data%">linkedin.com/in/%account%</a></li>';
+var HTMLPrint_mysite = '<li class="flex-item"><a target="_blank" href="https://hannwong.github.io/%data%">hannwong.github.io</a></li>';
+var HTMLPrint_github = '<li class="flex-item"><a target="_blank" href="https://github.com/%data%">github.com/%data%</a></li>';
+var HTMLPrint_linkedin = '<li class="flex-item"><a target="_blank" href="https://linkedin.com/in/%data%">linkedin.com/in/%account%</a></li>';
 
 var HTMLheaderName = '<div class="name"><h1 id="name">%data%</h1></div>';
 var HTMLheaderRole = '<span class="role">%data%</span><hr>';
@@ -54,7 +54,7 @@ var HTMLPrint_workDates = '<div>%data%</div>';
 var HTMLPrint_workDescriptionStart = '<div class="description"><ul></ul></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a target="_blank" href="%url%">%data%</a>';
+var HTMLprojectTitle = '<a target="_blank" href="https://%url%">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescriptionStart = '<p><br><ul></ul></p>';
 var HTMLprojectDescription = '<li>%data%</li>';
@@ -63,7 +63,7 @@ var HTMLprojectImage = '<img src="%data%">';
 var HTMLPrint_projectStart = '<div class="print-project-entry"></div>';
 var HTMLPrint_projectTitleStart = '<div class="title"></div>';
 var HTMLPrint_projectTitle = '<div><b>%data%</b> -&nbsp;</div>';
-var HTMLPrint_projectUrl = '<div><a href="%data%">%data%</a></div>';
+var HTMLPrint_projectUrl = '<div><a href="https://%data%">%data%</a></div>';
 var HTMLPrint_projectDates = '<div>%data%</div>';
 var HTMLPrint_projectDescriptionStart = '<div class="description"><ul></ul></div>';
 
