@@ -310,6 +310,38 @@ var education = {
   }
 };
 
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+    .substr(1)
+        .split("&")
+        .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    });
+    return result;
+}
+
+var resumeID = findGetParameter('resume');
+if (resumeID && resumeID in resumes) {
+  resume = resumes[resumeID];
+  if (resume.hasOwnProperty('bio')) {
+    var plainProps = ['name', 'role', 'welcomeMessage', 'biopic'];
+    for (var i = 0; i < plainProps.length; i++) {
+      var prop = plainProps[i];
+      if (resume['bio'].hasOwnProperty(prop)) {
+        bio[prop] = resume['bio'][prop];
+      }
+    }
+    if (resume['bio'].hasOwnProperty('contacts')) {
+      if (resume['bio']['contacts'].hasOwnProperty('mysite')) {
+        bio['contacts']['mysite'] = resume['bio']['contacts']['mysite'];
+      }
+    }
+  }
+}
+
 bio.display();
 
 projects.display();
