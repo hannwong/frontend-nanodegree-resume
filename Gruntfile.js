@@ -38,6 +38,11 @@ module.exports = function(grunt) {
             '-resize 360x200 ' +
             'images_src/still_life.jpg images/still_life.jpg');
 
+          // fry_small.jpg.
+          commands.push(command +
+            '-crop 234x278+75+0 ' +
+            'images_src/fixed/fry.jpg images/fry_small.jpg');
+
           return commands.join(' && ');
         }
       }

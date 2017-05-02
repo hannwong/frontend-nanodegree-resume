@@ -90,7 +90,7 @@ var work = {
       dates: "2017",
       description: [
         "Developed programming exercises, programmatic teaching tools.",
-        "Teaching aid for Probability/Statistics, Algorithms, AI, Database.",
+        "Teaching aid for Probability/Statistics, Algorithms, AI, and Database.",
         "Developed outreach workshops"],
       location: "Singapore University of Technology and Design"
     },
@@ -100,8 +100,8 @@ var work = {
       dates: "Spanning last 10 years",
       description: [
         "Wrote first book on OFBiz, a Java-based ERP.",
-        "Reverse-engineered malware, legacy software. And some cybersecurity-related work.",
-        "Installed rapid collaborative workflows with git, involved pull requests (peer reviews), Agile, ITS (Redmine).",
+        "Reverse-engineered malware, legacy software, and performed some cybersecurity-related work.",
+        "Installed rapid collaborative workflows with git which involved pull requests (peer reviews), Agile, and ITS (Redmine).",
         "Migrated workflows away from SVN and CVS."]
     },
     {
@@ -161,18 +161,18 @@ var projects = {
       title: "Online Resume",
       dates: "2017",
       description: [
-        "Online resume. Print styles allows 1-page print version. HTML/CSS/Javascript.",
-        "Git repo has 1 branch for each job application. Temp repo forks host corresponding online resumes.",
-        "Above and beyond Udacity project requirements. Used for actual job applications."],
-      images: ["images/fixed/fry.jpg"],
+        "Online resume that includes print styles for 1-page print version.",
+        "Uses HTML/CSS/Javascript, and Grunt for some art direction.",
+        "Uses GET parameter 'resume' to host multiple online resumes at one GitHub Pages (1 github repo)"],
+      images: ["images/fry_small.jpg"],
       url: 'github.com/hannwong/udacity-FEND-online-resume'
     },
     {
       title: "Portfolio Site",
       dates: "2017",
       description: [
-        "HTML/CSS/Javascript project. Uses Grunt, GraphicsMagick (for art direction), ImageOptim.",
-        "Responsive design. Correct sizes of images downloaded, some web optimization employed."],
+        "HTML/CSS/Javascript project that uses Grunt, GraphicsMagick (for art direction), and ImageOptim.",
+        "Responsive design where correct sizes of images downloaded, plus some other web optimization employed."],
       images: ["images/still_life.jpg", "images/volt.jpg"],
       url: 'github.com/hannwong/udacity-FEND-portfolio-site'
     }
@@ -228,15 +228,15 @@ var education = {
   schools: [
     {
       name: 'Nanyang Technological University',
-      degree: 'Communication Studies',
-      dates: '2008',
+      degree: 'BA Communication Studies',
+      dates: '2005',
       location: 'Nanyang Technological University',
       majors: ['Not completed due to financial difficulty']
     },
     {
       name: 'National University of Singapore',
-      degree: 'Computer Science',
-      dates: '2005',
+      degree: 'BSc Computer Science',
+      dates: '2008',
       location: 'National University of Singapore',
       majors: ['Not completed due to financial difficulty']
     }
