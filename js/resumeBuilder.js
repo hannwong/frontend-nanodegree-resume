@@ -340,6 +340,12 @@ if (resumeID && resumeID in resumes) {
       }
     }
   }
+
+  if (resume.hasOwnProperty('projects')) {
+    if (resume['projects']['op'] == 'prepend') {
+      projects['projects'] = resume['projects']['projects'].concat(projects['projects']);
+    }
+  }
 }
 
 bio.display();

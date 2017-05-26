@@ -15,5 +15,24 @@ resumes['gars4!caving'] = {
       ['Other', ['Git/GitHub', 'GIMP', 'Jekyll', 'Phonology', 'Cultural mimicry']]],
 
     biopic: 'images/fixed/selfie.jpg'
+  },
+
+  projects: {
+    op: 'prepend',
+    projects: [
+      {
+        title: "Git Lesson",
+        dates: "2017",
+        description: [
+          "Trim online Git lesson that covers concepts ('what') and usage ('why'); the 'how' can be Googled.",
+          "Built on Jekyll and HTML/CSS/Javascript, and uses Grunt for art direction.",
+          "Reader-friendly features include editable fields (commit IDs) and floating TOC.",
+          "Full yet trim run-through of necessary Git concepts from need-to-know internals to best-convention collaboration techniques.",
+          "Build script allows deployment on private BitBucket repos and publication on GitHub Pages."
+        ],
+        images: ["images/fixed/git.png"],
+        url: 'https://jon-wong-sutd.github.io/git-lessons/git-lesson/'
+      }
+    ]
   }
 };
