@@ -21,6 +21,17 @@ resumes['gars4!caving'] = {
     op: 'prepend',
     projects: [
       {
+        title: "Sigma.js Hacking (Reverse-engineering)",
+        dates: "2017",
+        description: [
+          "Hacked Sigma.js within hours to extend functionality",
+          "General demonstration of reverse-engineering ability",
+          "Pixel-accurate CSS styling for HTML lists, complex aesthetics"
+        ],
+        images: ["images/fixed/sigmajs.png"],
+        url: 'https://github.com/hannwong/jobapp-latize-techtest'
+      },
+      {
         title: "Git Lesson",
         dates: "2017",
         description: [
