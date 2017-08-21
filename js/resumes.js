@@ -21,6 +21,21 @@ resumes['gars4!caving'] = {
     op: 'prepend',
     projects: [
       {
+        title: "Agile workflow and culture",
+        dates: "2017",
+        description: [
+          "Migrated from underused SVN to BitBucket",
+          "Installed fluid, agile, emergent leadership; leadership arises from competence",
+          "Installed optimized version of textbook Agile/Scrum",
+          "Built visibility, accountability of all skills within team",
+          "Technical guidance on coding standards, code organization, architecture",
+          "Freed company from developer-lock, initiated rapid code ownership",
+          "Code quality protection via unit tests, rapid emergency code coverage by targetting mid-level functions"
+        ],
+        images: ["images/fixed/sigmajs.png"],
+        url: 'https://github.com/hannwong/jobapp-latize-techtest'
+      },
+      {
         title: "Sigma.js Hacking (Reverse-engineering)",
         dates: "2017",
         description: [

@@ -18,7 +18,7 @@ var bio = {
   skills: [
     ['Languages', ['HTML/CSS/JS', 'Python', 'C/C++', 'PHP', 'Less/Sass']],
     ['Frameworks/Libraries', ['jQuery', 'AngularJS', 'Knockout.js', 'Bootstrap/Foundation', 'Grunt/Gulp', 'Jasmine']],
-    ['Other', ['Git/GitHub', 'GIMP', 'Jekyll', 'Assembly', 'Hacking', 'Phonology', 'Cultural mimicry']]],
+    ['Other', ['Git/GitHub', 'Agile', 'GIMP', 'Jekyll', 'Assembly', 'Hacking', 'Phonology', 'Cultural mimicry']]],
 
   biopic: 'images/fixed/fry.jpg',
 
