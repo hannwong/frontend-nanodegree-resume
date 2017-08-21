@@ -76,15 +76,6 @@ var bio = {
 var work = {
   jobs: [
     {
-      employer: "Go-Ahead Singapore",
-      title: "Bus Driver",
-      dates: "2016 - 2017",
-      description: [
-        "Learned several bus routes well, helped fill gaps on launch date (Sep 04, 2016) when many bus drivers were assigned routes they didn't know.",
-        "Worked with management on developing new training material, better driving techniques."],
-      location: "Go-Ahead Singapore (Loyang Bus Depot)"
-    },
-    {
       employer: "Singapore University of Technology and Design",
       title: "Part-time Lecturer and Teaching Aide",
       dates: "2017",
@@ -93,8 +84,17 @@ var work = {
         "Teaching aide for Probability/Statistics, Algorithms, AI",
         "Co-lecturer for Database, Big Data",
         "Lecturer for Cybercrime, Masters programme",
-        "Developed outreach workshops"],
+        "Developed outreach workshops for Machine Learning"],
       location: "Singapore University of Technology and Design"
+    },
+    {
+      employer: "Go-Ahead Singapore",
+      title: "Bus Driver",
+      dates: "2016 - 2017",
+      description: [
+        "Learned several bus routes well, helped fill gaps on launch date (Sep 04, 2016) when many bus drivers were assigned routes they didn't know.",
+        "Worked with management on developing new training material, better driving techniques."],
+      location: "Go-Ahead Singapore (Loyang Bus Depot)"
     },
     {
       employer: "Various software houses in Singapore",
