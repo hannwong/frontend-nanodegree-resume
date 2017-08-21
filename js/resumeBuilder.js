@@ -86,11 +86,13 @@ var work = {
     },
     {
       employer: "Singapore University of Technology and Design",
-      title: "Part-time teaching aid",
+      title: "Part-time Lecturer and Teaching Aide",
       dates: "2017",
       description: [
         "Developed programming exercises, programmatic teaching tools.",
-        "Teaching aid for Probability/Statistics, Algorithms, AI, and Database.",
+        "Teaching aide for Probability/Statistics, Algorithms, AI",
+        "Co-lecturer for Database, Big Data",
+        "Lecturer for Cybercrime, Masters programme",
         "Developed outreach workshops"],
       location: "Singapore University of Technology and Design"
     },
