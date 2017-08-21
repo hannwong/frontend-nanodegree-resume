@@ -34,7 +34,7 @@ resumes['gars4!caving'] = {
           "Rapid stop-gap fix for missing documentation: functional specs implicitly documented in unit tests."
         ],
         images: ["images/fixed/sigmajs.png"],
-        url: 'https://github.com/hannwong/jobapp-latize-techtest'
+        url: 'github.com/hannwong/jobapp-latize-techtest'
       },
       {
         title: "Sigma.js Hacking (Reverse-engineering)",
@@ -45,7 +45,7 @@ resumes['gars4!caving'] = {
           "Pixel-accurate CSS styling for HTML lists, complex aesthetics"
         ],
         images: ["images/fixed/sigmajs.png"],
-        url: 'https://github.com/hannwong/jobapp-latize-techtest'
+        url: 'github.com/hannwong/jobapp-latize-techtest'
       },
       {
         title: "Git Lesson",
@@ -58,7 +58,7 @@ resumes['gars4!caving'] = {
           "Build script allows deployment on private BitBucket repos and publication on GitHub Pages."
         ],
         images: ["images/fixed/git.png"],
-        url: 'https://jon-wong-sutd.github.io/git-lessons/git-lesson/'
+        url: 'jon-wong-sutd.github.io/git-lessons/git-lesson/'
       }
     ]
   }

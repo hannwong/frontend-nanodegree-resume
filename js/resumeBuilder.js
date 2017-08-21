@@ -249,7 +249,7 @@ var education = {
       title: 'Udacity Front-End Nanodegree',
       school: 'Udacity',
       dates: '2016-2017',
-      url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
+      url: 'www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
     }
   ],
 
