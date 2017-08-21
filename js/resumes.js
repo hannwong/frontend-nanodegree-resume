@@ -30,7 +30,8 @@ resumes['gars4!caving'] = {
           "Built visibility, accountability of all skills within team",
           "Technical guidance on coding standards, code organization, architecture",
           "Freed company from developer-lock, initiated rapid code ownership",
-          "Code quality protection via unit tests, rapid emergency code coverage by targetting mid-level functions"
+          "Code quality protection via unit tests, rapid emergency code coverage by targetting mid-level functions",
+          "Rapid stop-gap fix for missing documentation: functional specs implicitly documented in unit tests."
         ],
         images: ["images/fixed/sigmajs.png"],
         url: 'https://github.com/hannwong/jobapp-latize-techtest'
