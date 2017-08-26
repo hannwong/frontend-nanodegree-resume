@@ -329,7 +329,7 @@ var resumeID = findGetParameter('resume');
 if (resumeID && resumeID in resumes) {
   resume = resumes[resumeID];
   if (resume.hasOwnProperty('bio')) {
-    var plainProps = ['name', 'role', 'welcomeMessage', 'biopic'];
+    var plainProps = ['name', 'role', 'welcomeMessage', 'skills', 'biopic'];
     for (var i = 0; i < plainProps.length; i++) {
       var prop = plainProps[i];
       if (resume['bio'].hasOwnProperty(prop)) {

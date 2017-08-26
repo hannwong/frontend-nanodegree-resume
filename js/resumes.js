@@ -68,7 +68,7 @@ resumes['brae40!rally'] = {
   bio: {
     name: 'Jon Wong',
     contacts: {
-      mysite: 'udacity-FEND-online-resume/?resume=gars4!caving',
+      mysite: 'udacity-FEND-online-resume/?resume=brae40!rally',
     },
 
     welcomeMessage: 'Looking to use my open-source hacking ability to drive innovation at Mozilla. My human language skills will allow me to build teams that are geographically, linguistically and culturally distributed. Have extreme Phonological Awareness (PA).',
